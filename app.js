@@ -9,4 +9,4 @@ app.use(bodyParser.json({ limit: '500mb' })); //bodyparser is set to parse json
 app.use(bodyParser.urlencoded({ limit: '500mb', extended: true })); //parse url encoded data
 
 
-
+module.exports = app;

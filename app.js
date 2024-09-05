@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const connectMongoDb = require('./init/mongoDb');
-const authRoute = require('./routes');
+const {authRoute, categoryRoute } = require('./routes');
 const morgan = require('morgan');
 const { errorMiddleware } = require('./middleware');
 const undefRoute = require('./controller/undefRoute');
@@ -21,6 +21,7 @@ app.use(morgan('dev'));
 
 //configuring routes
 app.use('/api/v1/auth', authRoute);
+app.use('/api/v1/category', categoryRoute);
 
 //undefined route
 app.use('/*', undefRoute);
